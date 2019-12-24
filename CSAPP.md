@@ -18,7 +18,7 @@ application-level programs as well. However, it is not perfect for all programme
 
 In order to run hello.c on the system, the individual C statements must be translated by other programs into **a sequence of low-level machine-language instructions**. These instructions are then packaged in a form called an executable object program and stored as a binary disk file. 
 
-![image-20191223063426068](images\image-20191223063426068.png)
+![image-20191223063426068](./images/image-20191223063426068.png)
 
 The programs that perform the **four phases** (preprocessor, compiler, assembler, and linker) are known collectively as the **compilation system**.
 
@@ -40,7 +40,7 @@ there are **some important reasons why programmers need to understand how compil
   accounted for many of the security holes in network and Internet servers. These  vulnerabilities exist because too few programmers understand the need to carefully restrict the quantity and forms of data they accept from untrusted sources. 
 
 #### 1.4 Processors Read and Interpret Instructions Stored in Memory
-![image-20191223065335693](images\image-20191223065335693.png)
+![image-20191223065335693](./images/image-20191223065335693.png)
 
 ##### 1.4.1 Hardware Organization of a System
 
@@ -83,7 +83,7 @@ We can distinguish the processor’s **instruction set architecture**, describin
 
 #### 1.5 Caches Matter
 
-![image-20191224004747785](images\image-20191224004747785.png)
+![image-20191224004747785](./images/image-20191224004747785.png)
 
 To deal with the processor–memory gap, system designers include smaller, faster storage devices called **cache memories** (or simply caches) that **serve as temporary staging areas for information** that the processor is likely to need in the near future. 
 
@@ -91,7 +91,7 @@ The L1 and L2 caches are implemented with a hardware technology known as **stati
 
 The idea behind caching is that a system can get the effect of both a very large memory and a very fast one by exploiting **locality**, **the tendency for programs to access data and code in localized regions**. 
 
-![image-20191224005028402](images\image-20191224005028402.png)
+![image-20191224005028402](./images/image-20191224005028402.png)
 
 #### 1.6 Storage Devices Form a Hierarchy
 
@@ -99,7 +99,7 @@ The main idea of a memory hierarchy is that storage at one level serves as a cac
 
 #### 1.7 The Operating System Manages the Hardware
 
-![image-20191224005132908](images\image-20191224005132908.png)
+![image-20191224005132908](./images/image-20191224005132908.png)
 
 We can think of the operating system as a layer of software interposed between the application program and the hardware. **All attempts by an application program to manipulate the hardware must go through the operating system.**
 
@@ -121,7 +121,7 @@ The operating system keeps track of all the state information that the process n
 **A uniprocessor system can only execute the code for a single process.** When the operating system decides to transfer control from the current process to some new process, it performs a context switch by saving the context of the current process, restoring the context of the new process, and then passing control to the new process. The new process picks up exactly where
 it left off. 
 
-![image-20191224010653043](images\image-20191224010653043.png)
+![image-20191224010653043](./images/image-20191224010653043.png)
 
 **The transition from one process to another is managed by the operating system kernel.** The kernel is the portion of the operating system code that is always resident in memory. When an application program requires some action by the operating system, such as to read or write a file, **it executes a special system call instruction**, transferring control to the kernel. The kernel then performs the requested operation and returns back to the application program. **Note that the kernel is not a separate process. Instead, it is a collection of code and data structures that the system uses to manage all the processes**.
 
@@ -129,7 +129,7 @@ it left off.
 
 In modern systems **a process can actually consist of multiple execution units, called threads,** each running in the context of the process and **sharing the same code and global data**. 
 
-![image-20191224010753372](images\image-20191224010753372.png)
+![image-20191224010753372](./images/image-20191224010753372.png)
 
 ##### 1.7.3 Virtual Memory
 
@@ -149,7 +149,7 @@ A file is **a sequence of bytes**, nothing more and nothing less. Every I/O devi
 This simple and elegant notion of a file is nonetheless very powerful because **it provides applications with a uniform view of all the varied I/O devices that might be contained in the system**. 
 
 #### 1.8 Systems Communicate with Other Systems Using Networks
-![image-20191224011647810](images\image-20191224011647810.png)
+![image-20191224011647810](./images/image-20191224011647810.png)
 
 #### 1.9 Important Themes
 
@@ -173,9 +173,9 @@ Until recently, **most actual computing was done by a single processor, even if 
 
 When we construct a system consisting of multiple processors all under the control of a single operating system kernel, we have a **multiprocessor system**.
 
-![image-20191224013805864](images\image-20191224013805864.png)
+![image-20191224013805864](./images/image-20191224013805864.png)
 
-![image-20191224013817081](images\image-20191224013817081.png)
+![image-20191224013817081](./images/image-20191224013817081.png)
 
 The cores share **higher levels of cache** as well as **the interface** to main memory. 
 
@@ -203,11 +203,10 @@ At the lowest level, many modern processors have special hardware that **allows 
 
 ##### 1.9.3 The Importance of Abstractions in Computer Systems
 
-![image-20191224014510539](images\image-20191224014510539.png)
+![image-20191224014510539](./images/image-20191224014510539.png)
 
 On the processor side, **the instruction set architecture provides an abstraction of the actual processor hardware**. 
 
 With this abstraction, a machine-code program behaves as if it were executed on a processor that performs just one instruction at a time. The underlying hardware is far more elaborate, executing multiple instructions in parallel, but always in a way that is consistent with the simple, sequential model. By keeping the same execution model, different processor implementations can execute the same machine code while offering a range of cost and performance.
 
 **The virtual machine:** providing an abstraction of the entire computer, including the operating system, the processor, and the programs. 
-
